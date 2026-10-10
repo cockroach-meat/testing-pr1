@@ -13,11 +13,11 @@
 
 | Правило | Начальное состояние                                    | После одного обновления ожидается | Почему выбраны данные                        | Имя теста/результат |
 | ------- | ------------------------------------------------------ | --------------------------------- | -------------------------------------------- | ------------------- |
-| BR3     | `name = "Колбаса", quality = 5, sell_in = 5`           | `quality = 4, sell_in = 4`        | Представитель класса "до истечения срока"    |                     |
-| BR4     | `name = "Колбаса", quality = 5, sell_in = -5`          | `quality = 3, sell_in = -6`       | Представитель класса "после истечения срока" |                     |
-| BR3     | `name = "Колбаса", quality = 5, sell_in = 1`           | `quality = 4, sell_in = 0`        | Граничный случай: нижняя граница срока       |                     |
-| BR4     | `name = "Колбаса", quality = 5, sell_in = 0`           | `quality = 3, sell_in = -1`       | Граничный случай: нижняя граница срока       |                     |
-| BR5     | `name = "Aged Brie", quality = 5, sell_in = 5`         | `quality = 6, sell_in = 4`        | Специальный товар                            |                     |
+| BR3     | `name = "Колбаса", quality = 5, sell_in = 5`           | `quality = 4, sell_in = 4`        | Представитель класса "до истечения срока"    | `test_normal_item_with_positive_sell_in`, успех                    |
+| BR4     | `name = "Колбаса", quality = 5, sell_in = -5`          | `quality = 3, sell_in = -6`       | Представитель класса "после истечения срока" |  `test_normal_item_with_negative_sell_in`, успех                    |
+| BR3     | `name = "Колбаса", quality = 5, sell_in = 1`           | `quality = 4, sell_in = 0`        | Граничный случай: нижняя граница срока       |  `test_normal_item_with_sell_in_1`, успех                    |
+| BR4     | `name = "Колбаса", quality = 5, sell_in = 0`           | `quality = 3, sell_in = -1`       | Граничный случай: нижняя граница срока       |   `test_normal_item_with_sell_in_0`, успех                   |
+| BR5     | `name = "Aged Brie", quality = 5, sell_in = 5`         | `quality = 6, sell_in = 4`        | Специальный товар                            |   `test_aged_brie_with_positive_sell_in`, успех                   |
 | BR5     | `name = "Aged Brie", quality = 5, sell_in = -5`        | `quality = 6, sell_in = -6`       | Специальный товар                            |                     |
 | BR2     | `name = "Aged Brie", quality = 49, sell_in = 5`        | `quality = 50, sell_in = 4`       | Граничный случай: верхняя граница качества   |                     |
 | BR2     | `name = "Aged Brie", quality = 50, sell_in = 5`        | `quality = 50, sell_in = 4`       | Граничный случай: верхняя граница качества   |                     |
